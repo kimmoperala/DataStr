@@ -1,4 +1,4 @@
-package Tehtava2;
+package tehtava2;
 
 public class testi {
 
