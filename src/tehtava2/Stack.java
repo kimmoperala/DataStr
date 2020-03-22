@@ -7,7 +7,7 @@ package src.tehtava2;
 
 /**
  *
- * @author kamaj
+ * @author Kimmo Perälä
  */
 public class Stack {
     

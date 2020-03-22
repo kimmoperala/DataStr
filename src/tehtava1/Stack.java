@@ -11,8 +11,8 @@ package src.tehtava1;
  */
 public class Stack {
     
-    private ListItem top=null;
-    private int size=0;
+    private ListItem top;
+    private int size;
     
     // muodosta uusi lista-alkio ja vie se pinon huipulle
     public void push(String aData){
