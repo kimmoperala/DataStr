@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tehtava1;
+package src.tehtava1;
 
 /**
  *
@@ -22,10 +22,10 @@ Lukurutiinit kirjaan Ohjelmoinnin perusteet Java-kielellä
 
 LUOKKA on JAVAN VERSIOILLE 1.1.*
 
-Operaatiot:   Lue.rivi()    antaa seuraavan syöttörivin    (String)
-              Lue.kluku()     "      "      kokonaisluvun  (int)
-              Lue.dluku()     "      "      desimaaliluvun (double)
-              Lue.merkki()  antaa seuraavan syöttörivin ensimmäisen
+Operaatiot:   Lue2.rivi()    antaa seuraavan syöttörivin    (String)
+              Lue2.kluku()     "      "      kokonaisluvun  (int)
+              Lue2.dluku()     "      "      desimaaliluvun (double)
+              Lue2.merkki()  antaa seuraavan syöttörivin ensimmäisen
 merkin
 
 Operaatiot ovat sitkeitä, ne VAATIVAT kelvollisen syötteen!
