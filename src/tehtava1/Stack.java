@@ -11,7 +11,7 @@ package tehtava1;
  */
 public class Stack {
     
-    private ListItem top;
+    private ListItem top=null;
     private int size=0;
     
     // muodosta uusi lista-alkio ja vie se pinon huipulle
@@ -28,7 +28,7 @@ public class Stack {
 			top = newItem;
     		top.setNext(last);
     	}
-    	this.size++;
+    	size++;
     }
     // poista ja palauta alkio pinon huipulta, 
     // jos pino tyhjä palauta null
@@ -39,7 +39,7 @@ public class Stack {
         	return null;
     	} else {
     		top = top.getNext();
-    		this.size--;
+    		size--;
     	}
     	return last;
     }
@@ -61,7 +61,7 @@ public class Stack {
         System.out.println(result);
     }
     public int getSize() {
-        return this.size;
+        return size;
     }
     
 }
