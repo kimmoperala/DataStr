@@ -7,7 +7,7 @@ package src.tehtava2;
 
 /**
  *
- * @author kamaj
+ * @author kamaj / Kimmo Perälä
  */
 public class Menu {
 //main alkaa-----------------------------------------------------------------------------
@@ -26,7 +26,7 @@ public class Menu {
 
                         System.out.println("\n\t\t\t1. Alkion lisääminen.");
                         System.out.println("\t\t\t2. Alkion poistaminen.");
-                        System.out.println("\t\t\t3. Pinon sisältö.");
+                        System.out.println("\t\t\t3. Jonon sisältö.");
                         System.out.println("\t\t\t4. Alkioiden lukumäärä.");
                         System.out.println("\t\t\t5. lopetus ");
                         System.out.print("\n\n"); // tehdään tyhjiä rivejä
@@ -40,7 +40,7 @@ public class Menu {
                         case '2':
                             ListItem item = s.pop();
                             if (item == null)
-                                System.out.println("Pino on tyhjä");
+                                System.out.println("Jono on tyhjä");
                             else
                                 System.out.println("Poistettu alkio: "+item.getData());
                             break;
