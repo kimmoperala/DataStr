@@ -19,15 +19,8 @@ public class Stack {
     	
     	ListItem newItem = new ListItem();
     	newItem.setData(aData);
-    	
-		if (top == null) {
-    		top = newItem;
-    	}
-		else {
-			ListItem last = top;
-			top = newItem;
-    		top.setNext(last);
-    	}
+    	newItem.setNext(top);
+		top = newItem;
     	size++;
     }
     // poista ja palauta alkio pinon huipulta, 

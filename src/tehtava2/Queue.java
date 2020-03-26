@@ -9,7 +9,7 @@ package src.tehtava2;
  *
  * @author Kimmo Perälä
  */
-public class Stack {
+public class Queue {
     
     private ListItem tail;
     private ListItem head;
@@ -26,11 +26,8 @@ public class Stack {
     		head = tail;
     	}
 		else {
-	    	ListItem last = new ListItem();
-	    	last = tail;
-
+			tail.setNext(newItem);
 			tail = newItem;
-			tail.setNext(last);
     	}
     	this.size++;
     }
@@ -42,35 +39,24 @@ public class Stack {
         	return null;
     	} else {
 	    	ListItem np = new ListItem();
-	    	ListItem first = new ListItem();
-	    	first = head;
-	    	np = tail;
-	    	while (np.getNext() != head && np.getNext() != null) {
-	    		np = np.getNext();
-	    	}
-	    	head = np;
-    		this.size--;
-    		if (this.size == 0) {
+	    	np = head;
+	    	head = head.getNext();
+	    	this.size--;
+	    	if (this.size == 0) {
         		tail = null;
         		head = null;
         	}
-	    	return first;
+	    	return np;
     	}
     }
     
     // tulosta jonon sisältö muuttamatta jonoa
     public void printItems() {
-    	if (this.size == 0) {
-    		System.out.println("Jono on tyhjä!");
+    	ListItem np = head;
+    	while (np != null) {
+    		System.out.println(np.getData());
+    		np = np.getNext();
     	}
-    	else {
-    		System.out.println(tail.getData());
-            ListItem nextItem = tail.getNext();
-            for (int i = this.size-1; i>0; i--) {
-            	System.out.println(nextItem.getData());
-            	nextItem = nextItem.getNext();
-            }
-        }
     }
     
     public int getSize() {
