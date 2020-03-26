@@ -11,8 +11,8 @@ package src.tehtava2;
  */
 public class Stack {
     
-    private ListItem top;
-    private ListItem bottom;
+    private ListItem tail;
+    private ListItem head;
     private int size;
     
     // muodosta uusi lista-alkio ja vie se jonon huipulle
@@ -21,16 +21,16 @@ public class Stack {
     	ListItem newItem = new ListItem();
     	newItem.setData(aData);
 
-		if (top == null) {
-    		top = newItem;
-    		bottom = top;
+		if (tail == null) {
+    		tail = newItem;
+    		head = tail;
     	}
 		else {
-	    	ListItem first = new ListItem();
-	    	first = top;
+	    	ListItem last = new ListItem();
+	    	last = tail;
 
-			top = newItem;
-			top.setNext(first);
+			tail = newItem;
+			tail.setNext(last);
     	}
     	this.size++;
     }
@@ -38,23 +38,23 @@ public class Stack {
     // poista ja palauta alkio jonon alusta, 
     // jos jono tyhjä palauta null
     public ListItem pop(){
-    	if (bottom == null) {
+    	if (head == null) {
         	return null;
     	} else {
 	    	ListItem np = new ListItem();
-	    	ListItem last = new ListItem();
-	    	last = bottom;
-	    	np = top;
-	    	while (np.getNext() != bottom && np.getNext() != null) {
+	    	ListItem first = new ListItem();
+	    	first = head;
+	    	np = tail;
+	    	while (np.getNext() != head && np.getNext() != null) {
 	    		np = np.getNext();
 	    	}
-	    	bottom = np;
+	    	head = np;
     		this.size--;
     		if (this.size == 0) {
-        		top = null;
-        		bottom = null;
+        		tail = null;
+        		head = null;
         	}
-	    	return last;
+	    	return first;
     	}
     }
     
@@ -64,8 +64,8 @@ public class Stack {
     		System.out.println("Jono on tyhjä!");
     	}
     	else {
-    		System.out.println(top.getData());
-            ListItem nextItem = top.getNext();
+    		System.out.println(tail.getData());
+            ListItem nextItem = tail.getNext();
             for (int i = this.size-1; i>0; i--) {
             	System.out.println(nextItem.getData());
             	nextItem = nextItem.getNext();
