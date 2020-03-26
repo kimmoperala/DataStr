@@ -45,20 +45,12 @@ public class Stack {
     }
     // tulosta pinon sisältö muuttamatta pinoa
     public void printItems() {
-    	String result;
-    	if (top == null) {
-    		result = "Pino on tyhjä!";
+        ListItem np = top;
+
+    	while(np != null) {
+            System.out.println(np.getData());
+            np = np.getNext();
     	}
-    	else {
-    		result = "Pinossa on (isoin numero päällimmäinen):\n";
-    		result += size + ": " + top.getData();
-            ListItem nextItem = top.getNext();
-            for (int i = size-1; i>0; i--) {
-            	result +=", " + i + ": " + nextItem.getData();
-            	nextItem = nextItem.getNext();
-            }
-        }
-        System.out.println(result);
     }
     public int getSize() {
         return size;
