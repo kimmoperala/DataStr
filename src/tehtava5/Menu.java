@@ -20,7 +20,7 @@ public class Menu {
 //printMenu alkaa------------------------------------------------------------------
         private static void printMenu() {
                 char select;
-                Stack s = new Stack(); // pino-olio
+                Queue s = new Queue(); // pino-olio
                 String data; // Pinon data-kenttä
                 do {
 
