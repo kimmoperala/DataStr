@@ -7,7 +7,7 @@ package src.tehtava5;
 
 /**
  *
- * @author kamaj
+ * @author Kimmo Perälä
  */
 public class Queue {
 
