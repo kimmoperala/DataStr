@@ -11,14 +11,14 @@ package src.tehtava5;
  */
 public class Queue {
 
-        ListItem head; // head näkyy oletuspakkaukseen
-        private ListItem tail;
+        //ListItem head; // head näkyy oletuspakkaukseen
+        //private ListItem tail;
         private int size;
         ListItem[] items;
 
         public Queue() {
-                head = null;
-                tail = null;
+                //head = null;
+                //tail = null;
                 items = new ListItem[10];
                 size = 0;
         }
@@ -31,10 +31,10 @@ public class Queue {
                 ListItem newItem = new ListItem(); // luodaan uusi lista-alkio
                 newItem.setData(aData);
                 
-                if (head == null) {
+                /*if (head == null) {
                 	head = newItem;
                 	tail = head;
-                }
+                }*/
                 
                 if (items[items.length-1] != null) {
                 	ListItem[] biggerArray = new ListItem[items.length + 10];
@@ -47,8 +47,8 @@ public class Queue {
 	                		break;
 	                	}
                 }
-                tail.setLink(newItem);
-                tail = newItem;
+                //tail.setLink(newItem);
+                //tail = newItem;
                 this.size++;
         }
         // poistetaan alkio pinon huipulta, jos pinossa ei alkioita palautetaan null
@@ -70,7 +70,7 @@ public class Queue {
                             items = poppedItems;
 
                         }
-                        head = items[0];
+                        //head = items[0];
                         this.size--;
                 }
                 return takeAway;
