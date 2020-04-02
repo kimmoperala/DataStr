@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package src.tehtava5;
+package tehtava2;
 
 /**
  *
  * @author kamaj
  */
+//---------------------------------------------------------------
+// Arto Wikla: Ohjelmoinnin perusteet Java-kielellä, OtaDATA 1998
+//---------------------------------------------------------------
+
+
 import java.io.*;
 public class Lue {
 /*************************************** Arto Wikla 1998**********

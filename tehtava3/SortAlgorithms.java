@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package src.tehtava3;
+package tehtava3;
 
 /**
  *
