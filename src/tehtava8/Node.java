@@ -18,7 +18,7 @@ public class Node {
         data = new String(value);
         left = right = null;
     }
-    public  Node (String value, BinaryTree left, BinaryTree right) {
+    public Node (String value, BinaryTree left, BinaryTree right) {
         data = new String(value);
         this.left = left;
         this.right = right;

@@ -7,7 +7,7 @@ package tehtava8;
 
 /**
  *
- * @author kamaj
+ * @author Kimmo Perälä
  */
 public class BinaryTree {
 
@@ -24,14 +24,55 @@ public class BinaryTree {
     } */
     
     public void insert(String aData){
-        
+    	BinaryTree newTree;
+
+        if (root == null) {
+        	Node newNode = new Node(aData);
+        	root = newNode;
+        } else if (aData.compareTo(root.getData()) <= 0){
+
+        	if(root.left() != null) {
+        		newTree = root.left();
+        		newTree.insert(aData);
+        	}
+        	else {
+        		BinaryTree tree = new BinaryTree(aData); // alipuun rootiksi aData
+        		root.setLeft(tree); // asetetaan alipuu vasemmalle
+        	}
+        }
+        else {
+        	if (root.right() != null) {
+        		newTree = root.right();
+        		newTree.insert(aData);
+        	}
+        	else {
+        		BinaryTree tree = new BinaryTree(aData); // alipuun rootiksi aData
+        		root.setRight(tree); // asetetaan alipuu oikealle
+        	}
+        }
     }
     
     public BinaryTree find(String aData){
-        
+        BinaryTree result;
     	// return ETEEN ennen ....find
-    	
-        return null;
+    	if (aData.compareTo(root.getData()) == 0) {
+    		result = new BinaryTree(root.getData());
+    		return result;
+    	}
+    	else if (aData.compareTo(root.getData()) < 0) {
+    		result = root.left();
+    		if (result == null) {
+    			return null;
+    		}
+    		return result.find(aData);
+    	}
+    	else {
+    		result = root.right();
+    		if (result == null) {
+    			return null;
+    		}
+    		return result.find(aData);
+    	}
     }
     public void preOrder() {
         if (root != null) {
