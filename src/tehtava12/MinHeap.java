@@ -8,7 +8,7 @@ public class MinHeap {
 	
 	private static final int FRONT = 1;
 	
-	public MinHeap(int maxsize) {
+	public MinHeap (int maxsize) {
 		this.maxsize = maxsize;
 		this.size = 0;
 		Heap = new int[this.maxsize + 1];
@@ -16,13 +16,13 @@ public class MinHeap {
 	}
 	
 	private int parent(int pos) {
-		return pos / 2;
+		return (pos / 2);
 	}
 	private int leftChild(int pos) {
 		return (2*pos);
 	}
 	private int rightChild(int pos) {
-		return (2*pos) + 1;
+		return (2*pos + 1);
 	}
 	private boolean isLeaf(int pos) {
 		if (pos >= (size / 2) && pos <= size) {
@@ -63,11 +63,20 @@ public class MinHeap {
 		}
 	}
 	public void print() {
-		for (int i = 1; i <= size / 2; i++) {
-			System.out.println(" PARENT : " + Heap[i]
-					+ " LEFT CHILD : " + Heap[2 * i]
-					+ " RIGHT CHILD : " + Heap[2 * i + 1]);
-			System.out.println();
+		if (size == 1) {
+			System.out.println(" PARENT : " + Heap[1]);
+		}
+		else if (size == 2) {
+			System.out.println(" PARENT : " + Heap[1]
+					+ " LEFT CHILD : " + Heap[2 * 1]);
+		}
+		else {
+			for (int i = 1; i <= size / 2; i++) {
+				System.out.println(" PARENT : " + Heap[i]
+						+ " LEFT CHILD : " + Heap[2 * i]
+						+ " RIGHT CHILD : " + Heap[2 * i + 1]);
+				System.out.println();
+			}
 		}
 	}
 	public void minHeap() {

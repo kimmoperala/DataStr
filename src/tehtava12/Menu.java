@@ -36,6 +36,7 @@ public class Menu {
                             data = Lue.kluku();
                             minHeap.insert(data);
                             minHeap.minHeap();
+                            minHeap.print();
                             break;
                         case '2':                           
                             System.out.println("Poistetaan pienin...");
