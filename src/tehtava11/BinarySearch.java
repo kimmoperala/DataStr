@@ -4,18 +4,17 @@ package tehtava11;
 
 public class BinarySearch {
 	private String[] array = new String[100];
-	private int n;
+	private int size;
 	
 	public BinarySearch() {
 		array[0]= "aapeli";
 		array[1]= "bertta";
-		this.n=2;
+		this.size=2;
 	}
 	
 	public void insert(String key) {
 		int capacity = this.array.length;
-		System.out.println(capacity);
-		this.n = insertMethod(this.array, this.n, key, capacity);
+		this.size = insertMethod(this.array, this.size, key, capacity);
 	}
 	
 	public int insertMethod(String[] array, int n, String data, int capacity) {
@@ -57,7 +56,7 @@ public class BinarySearch {
 		}
 	}
 	public void showAll() {
-		for (int i = 0; i < this.n; i++) {
+		for (int i = 0; i < this.size; i++) {
 			System.out.println(array[i] + " ");
 		}
 	}
