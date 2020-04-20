@@ -13,12 +13,11 @@ public class HashTable {
 	
 	public void add (int number) {
 		boolean success = false;
-		Integer placeNumber = new Integer(number % this.size);
-		Integer place = new Integer(placeNumber);
-		System.out.println("paikalle: " + place + " koko " + hashTable.length);
+		int placeNumber = number % this.size;
+		System.out.println("paikalle: " + placeNumber + " koko " + this.size);
 		while (!success && numberOfAdded != hashTable.length) {
-			if (hashTable[place] == null) {
-				hashTable[place] = number;
+			if (hashTable[placeNumber] == null) {
+				hashTable[placeNumber] = number;
 				numberOfAdded++;
 				success = true;
 			} else {
@@ -27,7 +26,6 @@ public class HashTable {
 				if (placeNumber > hashTable.length - 1) {
 					placeNumber = 0;
 				}
-				place = new Integer(placeNumber);
 			}
 		}
 		if (numberOfAdded == hashTable.length) {
