@@ -32,17 +32,11 @@ public class UsingJCAPI {
         
         System.out.println("Lajittele matkustajanumeron perusteella (Lambda):");
         cardUsers.sort(
-        		(TrafficCard tc1, TrafficCard tc2) -> {
-        			if (tc1.mTravellerNumber == tc2.mTravellerNumber) {
-        				return 0;
-        			} else if (tc1.mTravellerNumber > tc2.mTravellerNumber) {
-        				return 1;
-        			} else {
-        				return -1;
-        			}
-        		});
+        		(TrafficCard tc1, TrafficCard tc2) -> 
+        			Integer.compare(tc1.mTravellerNumber, tc2.mTravellerNumber)
+        			);
 
-        Iterator itr = cardUsers.iterator();
+        Iterator<TrafficCard> itr = cardUsers.iterator();
         while (itr.hasNext()) {
             System.out.println(itr.next());
         }
