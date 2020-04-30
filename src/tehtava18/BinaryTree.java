@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package tehtava8;
+package tehtava18;
 
 /**
  *
@@ -12,8 +12,9 @@ package tehtava8;
 public class BinaryTree {
 
     private Node root;
+    private int size = 0;
     
-    public BinaryTree(String rootValue) {
+    public BinaryTree(Integer rootValue) {
         root = new Node(rootValue);
     }
     public BinaryTree(){
@@ -23,12 +24,15 @@ public class BinaryTree {
         root = new Node(rootValue, left, right);
     } */
     
-    public void insert(String aData){
+    public void insert(Integer aData){
     	if (find(aData) != null) {
     		return;
     	}
+    	
     	BinaryTree newTree;
 
+    	this.size++;
+    	
         if (root == null) {
         	Node newNode = new Node(aData);
         	root = newNode;
@@ -58,15 +62,15 @@ public class BinaryTree {
         }
     }
     
-    public BinaryTree find(String aData){
+    public BinaryTree find(Integer aData){
         BinaryTree result;
     	// return ETEEN ennen ....find
 	    if (root != null) {
-	    	if (aData.compareTo(root.getData()) == 0) {
+	    	if (aData == root.getData()) {
 	    		result = new BinaryTree(root.getData());
 	    		return result;
 	    	}
-	    	else if (aData.compareTo(root.getData()) < 0) {
+	    	else if (aData < root.getData()) {
 	    		result = root.left();
 	    		if (result == null) {
 	    			return null;
@@ -85,7 +89,7 @@ public class BinaryTree {
     }
     public void preOrder() {
         if (root != null) {
-            System.out.println(root.getData()+',');
+            System.out.print(root.getData()+',');
             if (root.left() != null) // pääseeekö vasemmalle?
                 root.left().preOrder();
             if (root.right() != null) // pääseekö oikealle?
@@ -98,7 +102,7 @@ public class BinaryTree {
     	if (root != null) {
     		if (root.left() != null) // pääseeekö vasemmalle?
                 root.left().inOrder();
-            System.out.print(root.getData()+',');
+            System.out.print(root.getData()+", ");
             if (root.right() != null) // pääseekö oikealle?
                 root.right().inOrder();
     	}
@@ -110,5 +114,9 @@ public class BinaryTree {
 
     public void setRight(BinaryTree tree) {
         root.setRight(tree);
+    }
+    
+    public int getSize() {
+    	return this.size;
     }
 }
